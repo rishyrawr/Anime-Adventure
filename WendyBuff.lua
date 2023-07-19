@@ -1,4 +1,8 @@
-while wait() do
+repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
+
+while true do
 local wendybuff = {}
 
 for _,v in pairs(game:GetService("Workspace")._UNITS:GetChildren()) do
