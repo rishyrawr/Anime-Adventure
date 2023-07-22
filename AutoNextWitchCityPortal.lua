@@ -25,7 +25,7 @@ function Portal(id)
    end
 end
 
-for i,v in pairs(Portal('portal_item__madoka')) do
+for i,v in pairs(Portal('portal_item__eclipse')) do
    for index, value in pairs(settings.Tiers) do
       if v['_unique_item_data']['_unique_portal_data']['portal_depth'] == tonumber(index) and not table.find(value, v['_unique_item_data']['_unique_portal_data']['challenge']) then
 	    local args = {[1] = "replay", [2] = {["item_uuid"] = v["uuid"]}}
