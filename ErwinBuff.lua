@@ -11,7 +11,7 @@ for _,v in pairs(game:GetService("Workspace")._UNITS:GetChildren()) do
     end
 end
 
-if #leafabuff == 4 then
+if #erwinbuff == 4 then
     while true do
         game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(erwinbuff[1])
         wait(15.5)
