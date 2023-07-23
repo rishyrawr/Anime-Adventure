@@ -30,5 +30,6 @@ for i,v in pairs(Portal('portal_item__madoka')) do
       if v['_unique_item_data']['_unique_portal_data']['portal_depth'] == tonumber(index) and not table.find(value, v['_unique_item_data']['_unique_portal_data']['challenge']) then
 	    local args = {[1] = "replay", [2] = {["item_uuid"] = v["uuid"]}}
 		game:GetService('ReplicatedStorage').endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(args))
+      end
     end
- end
+end
