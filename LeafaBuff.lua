@@ -14,13 +14,13 @@ end
 if #leafabuff == 4 then
     while true do
         game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(leafabuff[1])
-        wait(15.4)
+        wait(16.4)
         game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(leafabuff[3])
-        wait(15.4)
+        wait(16.4)
         game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(leafabuff[2])
-        wait(15.4)
+        wait(16.4)
         game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(leafabuff[4])
-        wait(15.4)
+        wait(16.4)
     end
 end
 end
