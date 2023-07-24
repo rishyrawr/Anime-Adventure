@@ -14,7 +14,7 @@ while task.wait() do
     if #erwinbuff == 4 then
         while true do
             for i = 1, 4 do
-                game:GetService('ReplicatedStorag').endpoints['client_to_server'].use_active_attack:InvokeServer(erwinbuff[i])
+                game:GetService('ReplicatedStorage').endpoints['client_to_server'].use_active_attack:InvokeServer(erwinbuff[i])
                 task.wait(15.5)
             end
         end
