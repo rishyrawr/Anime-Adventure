@@ -16,9 +16,12 @@ while ErwinCount ~= 4 do task.wait()
     end
 
     while ErwinCount == 4 do
-        for i = 1, ErwinCount do
-            use_active:InvokeServer(ErwinTable[i])
-            task.wait(15.4)
-        end
+        use_active:InvokeServer(ErwinTable[1])
+        task.wait(15.4)
+        use_active:InvokeServer(ErwinTable[2])
+        task.wait(15.4)
+        use_active:InvokeServer(ErwinTable[3])
+        task.wait(15.4)
+        use_active:InvokeServer(ErwinTable[4])
     end
 end
