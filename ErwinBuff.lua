@@ -2,25 +2,23 @@ repeat task.wait() until game:IsLoaded() == true
 repeat task.wait() until game:GetService('Workspace'):WaitForChild('_waves_started').Value == true
 repeat task.wait() until game:GetService('Workspace'):FindFirstChild('_UNITS') ~= nil
 
-while task.wait() do wait()
-local erwinbuff = {}
+local ErwinCount = 0
 
-for _,v in pairs(game:GetService("Workspace")._UNITS:GetChildren()) do
-    if v.Name == 'erwin' and v:WaitForChild('_stats').player.Value == game.Players.LocalPlayer then
-        table.insert(erwinbuff, v)
-    end
-end
+while ErwinCount ~= 4 do task.wait()
+    local use_active = game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack
+    local ErwinTable = {}
 
-if #erwinbuff == 4 then
-    while true do
-        game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(erwinbuff[1])
-        wait(15.5)
-        game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(erwinbuff[3])
-        wait(15.5)
-        game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(erwinbuff[2])
-        wait(15.5)
-        game:GetService("ReplicatedStorage").endpoints["client_to_server"].use_active_attack:InvokeServer(erwinbuff[4])
-        wait(15.5)
+    for _, unit in pairs(game:GetService('Workspace')._UNITS:GetChildren()) do
+        if unit.Name == 'erwin' and unit:WaitForChild('_stats').player.Value == game.Players.LocalPlayer then
+            ErwinCount = ErwinCount + 1
+            table.insert(ErwinTable, unit)
+        end
     end
-end
+
+    while ErwinCount == 4 do
+        for i = 1,ErwinCount do
+            use_active:InvokeServer(ErwinTable[i])
+            task.wait(15.4)
+        end
+    end
 end
