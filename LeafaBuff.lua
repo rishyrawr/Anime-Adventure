@@ -16,9 +16,13 @@ while LeafyCount ~= 4 do task.wait()
     end
 
     while LeafyCount == 4 do
-        for i = 1, LeafyCount do
-            use_active:InvokeServer(LeafyTable[i])
-            task.wait(16.4)
+        use_active:InvokeServer(LeafyTable[1])
+        task.wait(16.4)
+        use_active:InvokeServer(LeafyTable[2])
+        task.wait(16.4)
+        use_active:InvokeServer(LeafyTable[3])
+        task.wait(16.4)
+        use_active:InvokeServer(LeafyTable[4])
         end
     end
 end
