@@ -13,7 +13,6 @@ function Auto_Leafy(v)
             end
         end
         if #LeafyTable ~= maxLeafyCount then
-            retard("Place 4 Leafy, Not " .. LeafyCount)
             task.wait(5)
         end
             while LeafyCount == maxLeafyCount do
