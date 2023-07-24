@@ -1,3 +1,4 @@
+-- NOTE: NOT WORK W/ XENON HUB
 repeat task.wait() until game:IsLoaded() == true
 repeat task.wait() until game:GetService("Workspace"):WaitForChild("_waves_started").Value == true
 repeat task.wait() until game:GetService("Workspace"):FindFirstChild("_UNITS") ~= nil
