@@ -16,9 +16,12 @@ while WendaCount ~= 4 do task.wait()
     end
 
     while WendaCount == 4 do
-        for i = 1, WendaCount do
-            use_active:InvokeServer(WendaTable[i])
-            task.wait(15.4)
-        end
+        use_active:InvokeServer(WendaTable[1])
+        task.wait(15.4)
+        use_active:InvokeServer(WendaTable[2])
+        task.wait(15.4)
+        use_active:InvokeServer(WendaTable[3])
+        task.wait(15.4)
+        use_active:InvokeServer(WendaTable[4])
     end
 end
