@@ -8,7 +8,7 @@ local use_active = game:GetService("ReplicatedStorage").endpoints["client_to_ser
 while true do task.wait()
     local ErwinTable = {}
     for _, unit in pairs(game:GetService("Workspace")._UNITS:GetChildren()) do
-        if unit.Name == "erwin" and unit:FindFirstChild("_stats").id.Value == "erwin" and unit:WaitForChild("_stats").player.Value == game.Players.LocalPlayer then
+        if unit.Name == "erwin" and unit:WaitForChild("_stats").player.Value == game.Players.LocalPlayer then
             table.insert(ErwinTable, unit)
         end
     end
