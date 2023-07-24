@@ -25,4 +25,4 @@ function Auto_Leafy(v)
     end
 end 
 
-Auto_Leafy()
+Auto_Leafy(v)
