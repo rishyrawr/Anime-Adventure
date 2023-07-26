@@ -6,7 +6,7 @@ while task.wait() do
     local erwinbuff = {}
     
     for _,v in pairs(game:GetService('Workspace')._UNITS:GetChildren()) do
-        if v.Name == 'erwin' and v:WaitForChild('_stats').player.Value == game.Players.LocalPlayer then
+        if v.Name == 'erwin_halloween' or v.Name == 'erwin' and v:WaitForChild('_stats').player.Value == game.Players.LocalPlayer then
             table.insert(erwinbuff, v)
         end
     end
